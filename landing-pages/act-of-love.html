@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Act of Love — רוית צור וייסלברג</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;600;700&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bordeaux:#7A3B3B;
+    --bordeaux-dark:#5C2A2A;
+    --thread:#8B3A3A;
+    --taupe:#C9BBA8;
+    --taupe-light:#E4DACB;
+    --cream:#F6F0E6;
+    --navy:#3E4A5C;
+    --text-dark:#2B241E;
+    --text-light:#5B4F42;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Assistant',sans-serif;
+    color:var(--text-dark);
+    background:var(--cream);
+    line-height:1.7;
+    font-size:18px;
+  }
+  h1,h2,h3,h4{
+    font-family:'Frank Ruhl Libre',serif;
+    font-weight:600;
+    line-height:1.35;
+    color:var(--bordeaux-dark);
+  }
+  .container{max-width:720px;margin:0 auto;padding:0 24px;}
+  section{padding:64px 0;}
+  img{max-width:100%;display:block;}
+
+  /* thread svg helpers */
+  .thread{stroke:var(--thread);stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+  .divider{display:flex;justify-content:center;margin:8px 0 32px;}
+  .divider svg{width:90px;height:60px;}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(180deg,var(--taupe) 0%,var(--taupe-light) 100%);
+    padding:56px 0 48px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-thread{width:220px;max-width:60vw;margin:0 auto 20px;}
+  .pre-headline{
+    font-size:1.05rem;
+    color:var(--bordeaux-dark);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .headline{
+    font-size:2.15rem;
+    margin-bottom:18px;
+  }
+  .sub-headline{
+    font-size:1.15rem;
+    color:var(--text-light);
+    max-width:560px;
+    margin:0 auto 32px;
+  }
+
+  /* buttons */
+  .btn-primary{
+    display:inline-block;
+    background:var(--bordeaux);
+    color:var(--white)!important;
+    padding:18px 44px;
+    border-radius:10px;
+    font-family:'Frank Ruhl Libre',serif;
+    font-size:1.15rem;
+    font-weight:600;
+    text-decoration:none;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(122,59,59,.28);
+    transition:transform .15s ease, box-shadow .15s ease;
+    border:none;
+    cursor:pointer;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(122,59,59,.35);}
+  .btn-wrap{text-align:center;margin-top:8px;}
+  .btn-sub{
+    display:block;
+    margin-top:12px;
+    font-size:.9rem;
+    color:var(--text-light);
+  }
+
+  /* pain section */
+  .pain{background:var(--cream);}
+  .pain h2{font-size:1.7rem;text-align:center;margin-bottom:28px;}
+  .pain p{margin-bottom:18px;color:var(--text-dark);}
+  .pain em{
+    display:block;
+    font-style:normal;
+    font-family:'Frank Ruhl Libre',serif;
+    color:var(--bordeaux);
+    font-size:1.1rem;
+    margin:6px 0;
+  }
+
+  /* alternating band */
+  .band{background:var(--white);}
+  .band-taupe{background:var(--taupe-light);}
+  .band h2{font-size:1.6rem;margin-bottom:22px;}
+  .band p{margin-bottom:16px;}
+
+  ul.plain{list-style:none;margin:18px 0;}
+  ul.plain li{
+    position:relative;
+    padding-right:28px;
+    margin-bottom:14px;
+  }
+  ul.plain li::before{
+    content:"";
+    position:absolute;
+    right:0;
+    top:9px;
+    width:12px;height:12px;
+    border:3px solid var(--thread);
+    border-radius:50%;
+    background:transparent;
+  }
+
+  /* bio */
+  .bio-badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:22px 0 6px;
+  }
+  .badge{
+    background:var(--bordeaux);
+    color:var(--white);
+    font-size:.85rem;
+    padding:8px 14px;
+    border-radius:20px;
+    font-weight:600;
+  }
+
+  /* program chapters */
+  .chapters{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+  .chapter-card{
+    background:var(--white);
+    border-radius:14px;
+    padding:20px 22px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    box-shadow:0 2px 10px rgba(43,36,30,.06);
+  }
+  .chapter-num{
+    flex:0 0 auto;
+    width:42px;height:42px;
+    border-radius:50%;
+    border:3px solid var(--thread);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Frank Ruhl Libre',serif;
+    font-weight:700;
+    color:var(--bordeaux);
+    font-size:1.05rem;
+  }
+  .chapter-body h3{font-size:1.05rem;margin-bottom:6px;color:var(--bordeaux-dark);}
+  .chapter-body p{font-size:.96rem;color:var(--text-light);margin:0;}
+  .program-meta{
+    text-align:center;
+    margin-top:26px;
+    font-size:1.02rem;
+    color:var(--text-dark);
+    font-weight:600;
+  }
+
+  /* pricing */
+  .pricing{
+    background:var(--bordeaux);
+    color:var(--cream);
+    text-align:center;
+  }
+  .pricing h2{color:var(--white);}
+  .price-box{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:16px;
+    padding:32px 24px;
+    margin:28px auto;
+    max-width:420px;
+  }
+  .price-old{
+    font-size:1.1rem;
+    text-decoration:line-through;
+    opacity:.7;
+    margin-bottom:6px;
+  }
+  .price-new{
+    font-size:2.6rem;
+    font-family:'Frank Ruhl Libre',serif;
+    font-weight:700;
+    color:var(--white);
+    margin-bottom:4px;
+  }
+  .price-alt{font-size:.95rem;opacity:.85;margin-bottom:0;}
+  .pricing .btn-primary{background:var(--white);color:var(--bordeaux-dark)!important;}
+  .pricing p.lead{max-width:520px;margin:0 auto 8px;}
+
+  /* fit checklist */
+  .fit-grid{display:flex;flex-direction:column;gap:14px;margin-top:24px;}
+  .fit-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:var(--white);
+    border-radius:12px;
+    padding:16px 18px;
+    box-shadow:0 2px 8px rgba(43,36,30,.05);
+  }
+  .fit-check{
+    flex:0 0 auto;
+    width:26px;height:26px;
+    color:var(--thread);
+    font-weight:700;
+    font-size:1.1rem;
+  }
+
+  /* final CTA */
+  .final-cta{
+    background:linear-gradient(180deg,var(--taupe-light) 0%,var(--taupe) 100%);
+    text-align:center;
+  }
+  .final-cta h2{font-size:1.7rem;margin-bottom:16px;}
+  .final-cta p{max-width:560px;margin:0 auto 30px;font-size:1.08rem;}
+  .signature{
+    margin-top:34px;
+    font-family:'Frank Ruhl Libre',serif;
+    font-style:normal;
+    color:var(--bordeaux-dark);
+    font-size:1.15rem;
+  }
+
+  footer{
+    text-align:center;
+    padding:28px 24px 100px;
+    font-size:.82rem;
+    color:var(--text-light);
+    background:var(--cream);
+  }
+
+  /* sticky cta */
+  .sticky-cta{
+    display:none;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--bordeaux);
+    padding:12px 16px;
+    z-index:100;
+    box-shadow:0 -4px 16px rgba(0,0,0,.15);
+  }
+  .sticky-cta a{
+    display:block;
+    text-align:center;
+    color:var(--white);
+    font-family:'Frank Ruhl Libre',serif;
+    font-weight:600;
+    font-size:1.05rem;
+    text-decoration:none;
+    padding:12px;
+  }
+  @media (max-width:768px){
+    .sticky-cta{display:block;}
+    body{padding-bottom:0;}
+    .headline{font-size:1.7rem;}
+    section{padding:48px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <svg class="hero-thread" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+      <path class="thread" d="M100 20
+        C 70 10, 40 30, 45 55
+        C 48 72, 68 78, 80 68
+        C 90 60, 85 45, 72 46
+        C 60 47, 58 62, 70 70
+        C 90 84, 120 82, 130 60
+        C 140 38, 118 15, 100 20 Z"/>
+    </svg>
+    <p class="pre-headline">לכל מי שמרגישה שהזוגיות שלה תקועה בלופ שחוזר על עצמו</p>
+    <h1 class="headline">להחזיר הרמוניה, שלווה ואופטימיות הביתה —<br>ולהרגיש שוב אהובה, מוערכת, ולא בודדה</h1>
+    <p class="sub-headline">כן, גם בלי לרתום את בן/בת הזוג שלך לטיפול זוגי, וגם בלי להוציא אלפי שקלים. זה אפשרי — ואני אראה לך איך.</p>
+    <div class="btn-wrap">
+      <a href="#price" class="btn-primary">כן, אני רוצה להתחיל</a>
+    </div>
+  </div>
+</header>
+
+<!-- 1. PAIN -->
+<section class="pain">
+  <div class="container">
+    <h2>את מזהה את זה?</h2>
+    <p>חודשים, אולי שנים, שאתם מסתובבים סביב אותם ריבים מעייפים. את מרגישה שהם אלה שמנהלים את הזוגיות שלכם — לא אתם.</p>
+    <p>את מוצאת את עצמך יותר ויותר לבד. עם חברות. או עם עוד בינג' בנטפליקס, כשבן/בת הזוג ממש לידך על הספה. כמעט לא נפגשים לב אל לב יותר.</p>
+    <p>"החיים עצמם" שתו את הרומנטיקה ואת הקשר המיוחד שהיה לכם, והימים הפכו לרצף של תיאומים מעשיים, ריבים, או שתיקות. נפער מרחק עצום ביניכם, ולפעמים נדמה ששום דבר כבר לא יחזיר את הקשר להיות מה שהיה.</p>
+    <p>את מרגישה בודדה. לא מוערכת. לא מובנת.</p>
+    <p>את אומרת לעצמך:</p>
+    <em>"אם רק היינו יכולים להיות פחות..."</em>
+    <em>"אם רק הוא/היא היה/הייתה יותר..." או "אם רק היה/הייתה משתנה"</em>
+    <p>ולפעמים עולה אשמה — אולי זו את שנכשלת? למה את לא מצליחה לעשות אחרת?</p>
+    <p>את תוהה אם פשוט להשלים עם זה, שהדברים יישארו ככה — אולי רק עד שהילדים יגדלו, ואולי לתמיד. לפעמים את שואלת את עצמך למה את עדיין שם.</p>
+    <p>כולם סביבך נראים כל כך מאושרים. ורק אתם שוב רבתם. אולי כבר פיתחת אדישות. נראה לך שזה אבוד, חסר תקווה, מפחיד.</p>
+    <p>אבל את יודעת שאת מתגעגעת אליו/אליה, אל מה שהייתם פעם. והכי — את מתגעגעת אלייך.</p>
+    <p><strong>גם אם את מרגישה שניסית הכל, וגם אם נראה לך שאי אפשר לתקן — תמשיכי לקרוא. אני רואה את זה קורה כל יום בקליניקה שלי.</strong></p>
+  </div>
+</section>
+
+<div class="divider">
+  <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+    <path class="thread" d="M10 30 C 25 10, 40 50, 50 30 C 60 10, 75 50, 90 30"/>
+  </svg>
+</div>
+
+<!-- 2. ROOT PROBLEM -->
+<section class="band">
+  <div class="container">
+    <h2>למה זה קורה (ולמה זה לא באשמתך)</h2>
+    <p>מגדולי החוקרים בעולם העבודה עם זוגות — סו ג'ונסון, ראס האריס, הארוויל הנדריקס, ד"ר גוטמן ואחרים — למדתי שאין טעם בניסיון "לתקן" את בן/בת הזוג.</p>
+    <p>במקום זה, נכון להתמקד בדפוסי ההיקשרות שלכם, ובאופן שבו הם גורמים לכם כאב ותסכול אדירים בתוך הקשר, בלי כוונה.</p>
+    <p>אבל לא די בזיהוי מקור הפצע כדי להוציא זוג מלופ אינסופי של האשמות וריבים. ממאות שעות תרגול אישי וקבוצתי בעבודה עם זוגות בקליניקה ובסדנאות למדתי שבני הזוג ממשיכים "לדרוך על הפצע" — עד שלומדים את ה<strong>איך</strong>:</p>
+    <ul class="plain">
+      <li>איך אני מספרת לעצמי סיפור חדש?</li>
+      <li>איך אני לומדת את דפוסי החשיבה שלי?</li>
+      <li>איך אני מזהה את הרגשות שלי?</li>
+      <li>איך אני מדברת את הצרכים שלי?</li>
+    </ul>
+    <p>את הדבר הזה החלטתי לפתח לתוכנית טיפולית — שילוב קסום של ה"מה" עם ה"איך", עם הרבה חמלה, סקרנות ועיניים טובות, גם לעצמנו וגם לבני הזוג.</p>
+    <p>בזכות אינטגרציה בין גישות מבוססות מחקר מעולם הטיפול הזוגי ותרגול מיינדפולנס, זכיתי לראות איך תוך זמן קצר זוגות מדווחים על הטבה משמעותית באיכות חייהם הזוגיים ובכלל. הקליניקה התמלאה, ויותר ויותר זוגות נאלצו להישאר בחוץ או להמתין שיתפנה מקום.</p>
+    <p>לכן החלטתי לאסוף את הידע ולארוז את הטיפול לכדי תוכנית אחת, לטובת מי שלא יכולה לחכות ברשימות המתנה ארוכות.</p>
+    <p>והנה היא לפנייך: תוכנית דיגיטלית שנועדה לענות על הצורך של מי שרוצה לקחת אחריות ושליטה בחזרה על מערכת היחסים שלה — מעמדה חומלת, מקבלת וסקרנית.</p>
+  </div>
+</section>
+
+<!-- 3. WHO I AM -->
+<section class="band band-taupe">
+  <div class="container">
+    <h2>מי אני</h2>
+    <p>כבת להורים גרושים (ולמעשה — לשושלת מפוארת של גירושים כואבים) עסקתי וחקרתי לעומק את ההשפעות ארוכות הטווח של פרידות הורים על חיי הילדים, ועל שביעות הרצון שלהם בזוגיות בבגרותם. שמתי לי למטרה לשבור את מעגל הפרידה הזה — קודם אצלי, ואחר כך בקרב מטופלות ומטופלים. החלטתי להקדיש את חיי לטיפול בזוגות אוהבים שרק צריכים מצפן מעודכן כדי למצוא את הדרך לחיים הרמוניים, ערכיים ושמחים.</p>
+    <p>מאז, כל כך הרבה פעמים שמעתי את המטופלות והמטופלים שלי אומרים: <em>"אם רק היה לי את הידע החשוב הזה לפני איקס שנים — כמה סבל היה נחסך מאיתנו."</em></p>
+    <p>אם עוד לא הספקנו להכיר — אני רוית, נשואה, אמא לשני ילדים נפלאים. יועצת, מטפלת זוגית ופסיכותרפיסטית בהכשרה בטיפול אינטגרטיבי.</p>
+    <p>ב-7 השנים האחרונות אני מחזיקה קליניקה לטיפול פרטני וזוגי בתל אביב-יפו. אני בוגרת שנים ארוכות של מחקר ולימודים:</p>
+    <div class="bio-badges">
+      <span class="badge">תואר שני בטיפול זוגי</span>
+      <span class="badge">מטפלת EFT</span>
+      <span class="badge">מוסמכת שלב 1+2 מכון גוטמן</span>
+      <span class="badge">מנחת אימגו מוסמכת</span>
+      <span class="badge">מנחת MBSR</span>
+    </div>
+    <p style="margin-top:22px;">והרצון להתפתח עדיין לא נגמר. את כל הכלים שתפגשי בקורס צברתי בלימוד אקדמי מעמיק, ניסיון קליני של מאות שעות טיפול, ועשרות שעות הדרכה ממיטב המטפלים בארץ.</p>
+  </div>
+</section>
+
+<!-- 4. PROGRAM -->
+<section class="band" id="program">
+  <div class="container">
+    <h2>תכירי את Act of Love</h2>
+    <p>תוכנית ליווי עשירה ומקיפה, שבה תלמדי על אהבה והתאהבות — מה קורה לנו כשאנחנו מתאהבים, ומה קורה כשאנחנו נוחתים מגן העדן למציאות.</p>
+    <p>תלמדי להתבונן בעצמך ולהכיר את עצמך הכי טוב שרק אפשר, עם עיניים טובות והרבה חמלה. תזהי את דפוסי החשיבה שלך, את הרגשות והצרכים שלך באופן מעמיק וחוויתי, ותלמדי איך להסכים לפגוש גם רגשות מכאיבים וקשים בלי צורך להימנע מהם או להיאבק בהם.</p>
+    <p>ארזתי עבורך כלים מהגישות המתקדמות ביותר (EFT, ACT, סכמה תרפיה, אימגו, גוטמן, מיינדפולנס/MBCT) וידע שצברתי לאורך שנים בעולם הטיפול — לכדי תוכנית אחת שמשלבת ידע תיאורטי לצד כלים פרקטיים וקלים ליישום, בדיוק עבורך.</p>
+    <p>זה ידע שלוקח שנים לצבור בטיפול אישי — ועכשיו כולו זמין עבורך, בליווי שלי.</p>
+
+    <h3 style="margin-top:38px;font-size:1.25rem;">איך התוכנית בנויה</h3>
+    <p>שמונה פרקים המלווים בתרגולי התבוננות פנימית עשירים, שאפשר לעשות לבד או עם בן/בת הזוג, בצירוף דפי עבודה וחקירה שמחליפים כ-20 מפגשים בקליניקה, וגם מדיטציות מוקלטות לתרגול יומיומי.</p>
+
+    <div class="chapters">
+      <div class="chapter-card">
+        <div class="chapter-num">1</div>
+        <div class="chapter-body">
+          <h3>המפה לפני המסע</h3>
+          <p>סקירת מבנה התוכנית וכיצד נכון ללמוד בה כדי לייצר תוצאות בשטח; הקשר ההדוק בין קשיבות לטיפול זוגי; למה לא צריך את בן/בת הזוג כאן כדי להצליח</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">2</div>
+        <div class="chapter-body">
+          <h3>מדע האהבה</h3>
+          <p>מיתוסים על אהבה; הצצה לאיך הדברים עובדים; איך משחררים את הפנטזיה הלא-ריאלית על זוגיות שמרעילה אותה</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">3</div>
+        <div class="chapter-body">
+          <h3>פצעי ההיקשרות</h3>
+          <p>פצעי היקשרות מוקדמים שמשפיעים על מהלך חיינו וקשרים עם דמויות משמעותיות; תביני בדיוק למה את מרגישה ופועלת כפי שאת פועלת, וכיצד לסגל דרכים מייטיבות יותר</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">4</div>
+        <div class="chapter-body">
+          <h3>דפוסי החשיבה שהורסים את הבית</h3>
+          <p>אמונות מגבילות ומחשבות מכאיבות; איך לעבוד איתן כדי להפחית ריבים ולראות תמונה מציאותית יותר של הזוגיות שלך (רמז: היא לא כזו גרועה)</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">5</div>
+        <div class="chapter-body">
+          <h3>להפסיק לפחד מהרגשות</h3>
+          <p>בושה, פחד, עצב, קנאה, ריקנות — איך לפגוש אותם בלי לברוח, ולפתח חוסן אל מול שגרה בלתי רצויה ושינויים</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">6</div>
+        <div class="chapter-body">
+          <h3>מחול האימה</h3>
+          <p>ההסבר הקליני לריב שחוזר על עצמו; איך יוצאים ממנו — אחרי הפרק הזה תריבו פחות ותאהבו יותר</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">7</div>
+        <div class="chapter-body">
+          <h3>Make Love, Not War</h3>
+          <p>שפת הצרכים האוניברסליים; איך מבקשים את מה שצריך כך שבן/בת הזוג ירצו לתת — לא להאשים, לא לתבוע, לא לבכות, לדבר</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">8</div>
+        <div class="chapter-body">
+          <h3>החוסן השקט</h3>
+          <p>תרגולי קשיבות ומיינדפולנס לכל תחומי החיים — שלווה, חמלה וחוסן ביומיום</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="program-meta">27 שיעורים בסך הכל, שמחליפים 27 מפגשים בקליניקה — בליווי חוברת עבודה פרקטית ליישום הכלים</p>
+  </div>
+</section>
+
+<!-- 5. PRICE -->
+<section class="pricing" id="price">
+  <div class="container">
+    <h2>השווי, המחיר וה-CTA</h2>
+    <p class="lead">במחיר של פחות משעת טיפול אחת אצלי בקליניקה, תקבלי קורס מלא בן 8 פרקים ו-27 שיעורים — ידע, כלים, פרקטיקה וליווי בשווי ערך ל-20 מפגשים בקליניקה.</p>
+    <div class="price-box">
+      <div class="price-old">שווי התוכנית: 1,800 ₪</div>
+      <div class="price-new">290 ₪</div>
+      <div class="price-alt">או 2 תשלומים של 145 ₪</div>
+    </div>
+    <p class="lead">תצטרפי למי שכבר עברו את התוכנית ומדווחות על שיפור משמעותי בזוגיות שלהן, ותעברי בעצמך תהליך שהוא, באמת, משנה חיים.</p>
+    <div class="btn-wrap">
+      <a href="#" class="btn-primary">כן, אני רוצה להתחיל שינוי</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. WHO IT'S FOR -->
+<section class="band">
+  <div class="container">
+    <h2>למי זה מתאים</h2>
+    <p>התוכנית בדיוק בשבילך אם:</p>
+    <div class="fit-grid">
+      <div class="fit-item"><span class="fit-check">✓</span><p>את רוצה לקחת את הזוגיות שלך לרמה חדשה של קשר אוהב ובטוח</p></div>
+      <div class="fit-item"><span class="fit-check">✓</span><p>את מרגישה שהצד השני לא רואה אותך, לא מבין אותך, ואתם עסוקים בעיקר בריבים אינסופיים, בוז, טינה וריחוק — אבל את יודעת בכל ליבך שאתם ראויים ויכולים ליותר</p></div>
+      <div class="fit-item"><span class="fit-check">✓</span><p>את עדיין מחזיקה ברצון לתקן ולאחות את השברים (גם 5% אמונה מספיקים כרגע)</p></div>
+      <div class="fit-item"><span class="fit-check">✓</span><p>גם אם את לא במערכת יחסים כרגע, אבל רוצה להבין מה הפעיל אותך עד היום, ומהם הלופים שאת נלכדת בהם שוב ושוב</p></div>
+      <div class="fit-item"><span class="fit-check">✓</span><p>את מאמינה שזה אפשרי, ורוצה לחיות אחרת — בית זוגי הרמוני ושמח, ולראות את מערכת היחסים שלך משגשגת ופורחת</p></div>
+      <div class="fit-item"><span class="fit-check">✓</span><p>את עדיין מאמינה שאתם יכולים להיות מאושרים יחד</p></div>
+      <div class="fit-item"><span class="fit-check">✓</span><p>את רק רוצה שפשוט יהיה פשוט</p></div>
+      <div class="fit-item"><span class="fit-check">✓</span><p>את רוצה לחולל שינוי גם אם בן/בת הזוג פחות "בעניין" של טיפול — בתוכנית הזו תוכלי לעשות את זה לגמרי בעצמך</p></div>
+      <div class="fit-item"><span class="fit-check">✓</span><p><strong>הכי חשוב:</strong> את מוכנה להשקיע בדבר הכי חשוב שתעשי — לשמור על הבית הזוגי שלך מכל משמר</p></div>
+    </div>
+    <p style="margin-top:26px;">הבונוס העיקרי שתקבלי בתוכנית: שינוי מדהים בכל מערכות היחסים שלך — כי כשאנחנו מבינות את עצמנו כל כך לעומק ועוברות שינוי עמוק ויסודי, הוא מהדהד למרחקים.</p>
+  </div>
+</section>
+
+<!-- 7. FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <svg class="hero-thread" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" style="width:150px;margin-bottom:18px;">
+      <path class="thread" d="M60 20 C 30 30, 30 70, 60 85 C 80 95, 100 85, 100 65 C 100 50, 80 45, 75 60 C 70 78, 95 95, 120 85 C 150 72, 155 35, 130 20 C 110 8, 90 12, 100 30"/>
+    </svg>
+    <h2>אז... את מוכנה?</h2>
+    <p>לצלול לעומק, להכיר את עצמך כמו שמעולם לא הכרת, להחזיר את התקווה בתוך הקשר, ולגלות איך את יכולה להביא את הקשר שלכם למקומות שלא חלמת עליהם?</p>
+    <div class="btn-wrap">
+      <a href="#price" class="btn-primary">כן, אני רוצה להתחיל תהליך</a>
+    </div>
+    <p class="signature">באהבה,<br>רוית</p>
+  </div>
+</section>
+
+<footer>
+  © רוית צור וייסלברג · Act of Love
+</footer>
+
+<div class="sticky-cta">
+  <a href="#price">כן, אני רוצה להתחיל — 290 ₪</a>
+</div>
+
+</body>
+</html>
